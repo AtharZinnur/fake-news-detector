@@ -1,0 +1,252 @@
+/* ---------- Global Styles ---------- */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.3s, color 0.3s;
+    color: #333;
+  }
+  
+  .day-mode {
+    background: #f5f5f5;
+    color: #333;
+  }
+  
+  .night-mode {
+    background: #121212;
+    color: #f0f0f0;
+  }
+  
+  /* ---------- Header ---------- */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+  
+  .top-right button {
+    margin-left: 10px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+  }
+  
+  .top-right button:hover {
+    transform: scale(1.05);
+  }
+  
+  /* ---------- Auth Section ---------- */
+  .auth-form {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 25px 30px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    display: none;
+    flex-direction: column;
+    transition: opacity 0.3s;
+  }
+  
+  .auth-form.active {
+    display: flex;
+  }
+  
+  .auth-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+  
+  .auth-form input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .auth-form input:focus {
+    border-color: #2ecc71;
+    box-shadow: 0 0 8px rgba(46,204,113,0.3);
+    outline: none;
+  }
+  
+  .auth-form button {
+    padding: 10px 15px;
+    background: #2ecc71;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .auth-form button:hover {
+    background: #27ae60;
+    transform: scale(1.05);
+  }
+  
+  .auth-form p {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .error-message {
+    color: #e74c3c;
+    text-align: center;
+    margin-bottom: 10px;
+    animation: fadeIn 0.4s;
+  }
+  
+  .success-message {
+    color: #2ecc71;
+    text-align: center;
+    margin-bottom: 10px;
+    animation: fadeIn 0.4s;
+  }
+  
+  /* ---------- Home / Search Section ---------- */
+  #searchSection {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 35px 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 320px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: background 0.3s;
+  }
+  
+  #searchSection h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+  
+  .search-box {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0 20px 0;
+  }
+  
+  .search-box input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    max-width: 400px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .search-box input:focus {
+    border-color: #2ecc71;
+    box-shadow: 0 0 8px rgba(46,204,113,0.3);
+    outline: none;
+  }
+  
+  .search-box button {
+    padding: 12px 18px;
+    background: #2ecc71;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .search-box button:hover {
+    background: #27ae60;
+    transform: scale(1.05);
+  }
+  
+  #themeText {
+    margin: 15px auto 0 auto;
+    line-height: 1.6;
+    max-width: 600px;
+    text-align: center;
+    color: inherit;
+    font-size: 1rem;
+  }
+  
+  .highlight {
+    font-weight: bold;
+    color: #2ecc71;
+  }
+  
+  #result {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  
+  #result.show {
+    opacity: 1;
+  }
+  
+  /* ---------- Animations ---------- */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px);}
+    to { opacity: 1; transform: translateY(0);}
+  }
+  
+  /* ---------- Responsive ---------- */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .top-right {
+      margin-top: 10px;
+    }
+  
+    #searchSection {
+      margin: 30px 20px;
+    }
+  
+    .search-box {
+      flex-direction: column;
+    }
+  
+    .search-box input {
+      max-width: 100%;
+    }
+  }
+  .top-right-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  #greeting {
+    margin-bottom: 5px; /* ~½ cm spacing */
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+  

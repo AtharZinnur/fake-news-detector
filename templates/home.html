@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake News Detector - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="day-mode">
+
+  <!-- Header -->
+  <header>
+    <h1>Fake News Detector</h1>
+    <div class="top-right-container">
+      <p id="greeting"></p> <!-- Greeting goes here -->
+      <div class="top-right">
+        <button id="toggleMode">🌙 Night Mode</button>
+        <button id="logoutBtn">🚪 Logout</button>
+      </div>
+    </div>
+  </header>
+  
+
+  <!-- Search Section -->
+  <main id="searchSection">
+    <h2>Check News Authenticity</h2>
+    <div class="search-box">
+      <input type="text" id="searchBar" placeholder="Enter news here...">
+      <button id="searchBtn">Check News</button>
+    </div>
+
+    <!-- Theme Text -->
+    <p id="themeText">
+      In today’s world, misinformation spreads faster than ever.  
+      A <span class="highlight">Fake News Detector</span> helps identify unreliable news,  
+      empowering readers to make <span class="highlight">informed decisions</span>.  
+      Stay aware, stay accurate, and combat the spread of false information.
+    </p>
+
+    <!-- Search Result -->
+    <p id="result"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
