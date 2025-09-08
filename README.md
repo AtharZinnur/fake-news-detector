@@ -5,14 +5,14 @@ This project simulates news authenticity checking with a **randomized fake/real 
 
 ---
 
-## ✨ Features
-- 🔐 **Signup & Login System** (stored in Local Storage)
-- 👋 **Personalized Greeting** after login
-- 🌙 **Day/Night Mode Toggle**
-- 🔎 **Fake News Detection (frontend simulation)**  
-  > Currently, the app generates a random result (Real/Fake) for demo purposes.
-- 🚪 **Logout Functionality**
-- This project is fully responsive and adapts to different screen sizes using **CSS media queries**.
+✨ Features
+🔐 Signup & Login System (stored in localStorage)
+👋 Personalized Greeting after login
+🌙 Day/Night Mode Toggle
+🔎 Fake News Detection (frontend simulation)
+The app currently generates a random result ("Real" or "Fake") for demonstration purposes.
+🚪 Logout Functionality
+📱 Responsive Design for different screen sizes
 
 ---
 
@@ -32,6 +32,6 @@ This project simulates news authenticity checking with a **randomized fake/real 
  ┣ 📜 script.js        # JavaScript logic (auth, toggle, search simulation)
  ┗ 📜 README.md        # Project documentation
 
- 
-
+How to Run Locally:-
+git clone https://github.com/AtharZinnur/fake-news-detector-frontend.git
 
