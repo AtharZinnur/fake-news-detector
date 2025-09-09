@@ -119,6 +119,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchBar = document.getElementById('searchBar');
   const result = document.getElementById('result');
 
+  // Create Reset button dynamically
+  let resetBtn = document.createElement("button");
+  resetBtn.textContent = "🔄 Reset";
+  resetBtn.style.display = "none"; // hidden by default
+
+  // Apply same style as green buttons
+  resetBtn.style.padding = "12px 18px";
+  resetBtn.style.background = "#2ecc71";
+  resetBtn.style.border = "none";
+  resetBtn.style.borderRadius = "8px";
+  resetBtn.style.color = "white";
+  resetBtn.style.fontWeight = "bold";
+  resetBtn.style.cursor = "pointer";
+  resetBtn.style.transition = "0.3s";
+  resetBtn.style.marginTop = "15px";
+
+  resetBtn.addEventListener("mouseover", () => {
+    resetBtn.style.background = "#27ae60";
+    resetBtn.style.transform = "scale(1.05)";
+  });
+  resetBtn.addEventListener("mouseout", () => {
+    resetBtn.style.background = "#2ecc71";
+    resetBtn.style.transform = "scale(1)";
+  });
+
+  // Append Reset button under result
+  result?.insertAdjacentElement("afterend", resetBtn);
+
   const showSearchResult = (text) => {
     if (!result) return;
     result.textContent = text;
@@ -140,5 +168,23 @@ document.addEventListener('DOMContentLoaded', () => {
       : '✅ This news seems Real!';
 
     showSearchResult(message);
+
+    // Disable search button after first click
+    searchBtn.disabled = true;
+    searchBtn.style.opacity = "0.6";
+    searchBtn.style.cursor = "not-allowed";
+
+    // Show Reset button
+    resetBtn.style.display = "inline-block";
+  });
+
+  // Reset button logic
+  resetBtn.addEventListener("click", () => {
+    result.textContent = "";
+    searchBar.value = "";
+    searchBtn.disabled = false;
+    searchBtn.style.opacity = "1";
+    searchBtn.style.cursor = "pointer";
+    resetBtn.style.display = "none"; // hide again
   });
 });
